@@ -55,7 +55,7 @@
       const result = await response.text();
       if (result === "Success") {
         alert("Login successful!");
-        window.location.href = "home.html"; // redirect to your home page
+        window.location.href = "home.html"; // redirect after login
       } else {
         alert("Invalid email or password.");
       }
