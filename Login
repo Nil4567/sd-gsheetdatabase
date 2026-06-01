@@ -47,7 +47,7 @@
       };
 
       // Replace with your Google Apps Script Web App URL
-      const response = await fetch("https://script.google.com/macros/s/AKfycbxM_hvku_ib7H_q6PzsG3qONmwPNeTdKJn1K3dHwYWw-pMqy__6GZoJJZv-3llDD4KjWg/exec_SCRIPT_URL", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycby4Ug4rqyP2Mu5zdbd5TNH0LyLjM4JDqFUiWj7gfCyjmJIGSfi7FCNl-3f2FF_U-qPEHQ/exec_SCRIPT_URL", {
         method: "POST",
         body: JSON.stringify(credentials)
       });
