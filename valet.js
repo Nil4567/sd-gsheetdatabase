@@ -1,5 +1,4 @@
 // valet.js
-// Store your Web App URL here
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxHE7OmnYyHFhJqjEgIIr9oDZmx4fQkhbyr47oIkbAH5nWsTW298ZnlkeDFUtXQCDGtkg/exec";
 
 async function login(credentials) {
