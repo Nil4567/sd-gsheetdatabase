@@ -1,0 +1,6 @@
+<script src="database/db.js"></script>
+<script>
+  const db = new GoogleSheetsDB('./database/data.json');
+  await db.loadData();
+  db.displayTable('tableContainer');
+</script>
