@@ -47,7 +47,7 @@
       };
 
       // Replace with your Google Apps Script Web App URL
-      const response = await fetch("YOUR_SCRIPT_URL", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbxM_hvku_ib7H_q6PzsG3qONmwPNeTdKJn1K3dHwYWw-pMqy__6GZoJJZv-3llDD4KjWg/exec_SCRIPT_URL", {
         method: "POST",
         body: JSON.stringify(credentials)
       });
