@@ -1,5 +1,5 @@
 // valet.js
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxHE7OmnYyHFhJqjEgIIr9oDZmx4fQkhbyr47oIkbAH5nWsTW298ZnlkeDFUtXQCDGtkg/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyi1s7BsUd78_wHktHRwZWptF37F2UNQVYqw1a6Ktvi/dev";
 
 async function login(credentials) {
   try {
