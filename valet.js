@@ -6,10 +6,15 @@ async function login(credentials) {
     const response = await fetch(SCRIPT_URL, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json"   // ✅ Required
       },
       body: JSON.stringify(credentials)
     });
+
+    if (!response.ok) {
+      throw new Error("HTTP status " + response.status);
+    }
+
     return response.text();
   } catch (err) {
     console.error("Login error:", err);
