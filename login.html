@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddhivinayak Digital - Login</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%); min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
+        
+        .login-container { background: white; padding: 50px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); max-width: 400px; width: 100%; }
+        
+        .logo { text-align: center; margin-bottom: 30px; }
+        .logo h1 { color: #0066ff; font-size: 2em; margin-bottom: 5px; }
+        .logo p { color: #666; font-size: 0.95em; }
+        
+        .form-group { margin-bottom: 20px; }
+        label { display: block; color: #333; font-weight: 600; margin-bottom: 8px; }
+        input { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-size: 1em; font-family: inherit; transition: border-color 0.3s; }
+        input:focus { outline: none; border-color: #0066ff; box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1); }
+        
+        .login-btn { width: 100%; padding: 14px; background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%); color: white; border: none; border-radius: 6px; font-size: 1.05em; font-weight: 600; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; margin-top: 20px; }
+        .login-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3); }
+        .login-btn:active { transform: translateY(0); }
+        
+        .error { background-color: #f8d7da; color: #721c24; padding: 12px; border-radius: 6px; margin-bottom: 20px; border: 1px solid #f5c6cb; display: none; }
+        .error.show { display: block; }
+        
+        .demo-info { background-color: #e7f3ff; border-left: 4px solid #0066ff; padding: 12px; margin-top: 20px; border-radius: 4px; font-size: 0.9em; color: #333; }
+        .demo-info strong { color: #0066ff; }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <h1>🙏 Siddhivinayak Digital</h1>
+            <p>OM Namah Shivay</p>
+        </div>
+        
+        <div id="errorMessage" class="error"></div>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter username" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
+            </div>
+            
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        
+        <div class="demo-info">
+            <strong>Demo Credentials:</strong><br>
+            Username: <strong>admin</strong><br>
+            Password: <strong>admin123</strong>
+        </div>
+    </div>
+    
+    <script>
+        // Check if already logged in
+        if (localStorage.getItem('loggedIn') === 'true') {
+            window.location.href = 'dashboard.html';
+        }
+        
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorDiv = document.getElementById('errorMessage');
+            
+            // Demo credentials
+            const validUsername = 'admin';
+            const validPassword = 'admin123';
+            
+            if (username === validUsername && password === validPassword) {
+                localStorage.setItem('loggedIn', 'true');
+                localStorage.setItem('currentUser', username);
+                window.location.href = 'dashboard.html';
+            } else {
+                errorDiv.textContent = '❌ Invalid username or password';
+                errorDiv.classList.add('show');
+                setTimeout(() => errorDiv.classList.remove('show'), 3000);
+            }
+        });
+    </script>
+</body>
+</html>
